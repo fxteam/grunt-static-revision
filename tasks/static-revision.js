@@ -185,7 +185,7 @@ module.exports = function (grunt) {
             grunt.file.write(configFile, JSON.stringify(configs));
 
             // Print a success message.
-            grunt.log.writeln(':::::' + configFile + ' build successful:::::');
+            grunt.log.writeln(':::::' + configFile + ' build successfully:::::');
         }
     );
 };

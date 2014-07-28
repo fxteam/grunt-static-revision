@@ -84,13 +84,8 @@ grunt.initConfig({
 });
 ```
 
-
-## Contributing
-[Samgui](http://samgui.com)
-[Ryan](http://www.kirkchris.co)
-
 ## Release History
-2014-07-25 optimize log format
+2014-07-25 optimizing log format
 
 2014-07-24 concat config into one json file & bugfix
 
