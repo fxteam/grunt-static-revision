@@ -1,7 +1,7 @@
 {
     "name": "grunt-static-revision",
     "description": "Create *.json for the static file asset and revisioning through content hashing",
-    "version": "0.1.8",
+    "version": "0.2.0",
     "homepage": "https://github.com/fxteam/grunt-static-revision",
     "author": {
         "name": "samgui",

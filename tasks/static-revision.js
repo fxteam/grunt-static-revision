@@ -53,8 +53,9 @@ module.exports = function (grunt) {
 
                 type = ext.replace('.', '');
                 dir = dir.split('/');
-                dir = dir[dir.length - 1];
-                filekey = dir + '/' + filename;
+                dir.shift();
+                dir.shift();
+                filekey = dir.join('/') + '/' + filename;
                 configs = grunt.file.readJSON(configFile);
 
                 if (configs) {

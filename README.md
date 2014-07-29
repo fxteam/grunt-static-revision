@@ -85,6 +85,8 @@ grunt.initConfig({
 ```
 
 ## Release History
+2014-07-29 bugfix:build a error key for multilayer directory
+
 2014-07-25 optimizing log format
 
 2014-07-24 concat config into one json file & bugfix
