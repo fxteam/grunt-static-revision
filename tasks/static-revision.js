@@ -10,7 +10,8 @@
 
 var fs = require('fs'),
     path = require('path'),
-    crypto = require('crypto');
+    crypto = require('crypto'),
+    chalk = require('chalk');
 
 module.exports = function (grunt) {
 
@@ -49,7 +50,7 @@ module.exports = function (grunt) {
                     filename = path.basename(filepath, ext),
                     maxVersionNumber = options.maxVersionNumber,
                     majorVersionNumber, minorVersionNumber, revisionNumber,
-                    config = {}, filekey, md5 = '', type , version, exist = false;
+                    config = {}, filekey, md5 = '', type , version, exist = false, changed = false;
 
                 type = ext.replace('.', '');
                 dir = dir.split('/');
@@ -99,12 +100,15 @@ module.exports = function (grunt) {
                         "version": version,
                         "md5": md5_hash
                     }
+
+                    changed = true;
                 }
 
                 return {
                     type: type,
                     filekey: filekey,
-                    config: config
+                    config: config,
+                    changed: changed
                 };
             }
 
@@ -172,10 +176,15 @@ module.exports = function (grunt) {
                     }
                 }).map(function (filepath) {
                     var config = revision(filepath);
-                    build(config, filepath);
+                    if (config.changed) {
+                        build(config, filepath);
 
-                    //Print build file and version
-                    grunt.log.writeln('>' + config.filekey + '.' + config.type + '@' + config.config.version);
+                        //Print build file and version
+                        grunt.log.writeln('├──' +
+                            chalk.white(config.filekey + '.' + config.type + '@') +
+                            chalk.bold.red(config.config.version)
+                        );
+                    }
                     return config;
                 });
 
@@ -186,7 +195,7 @@ module.exports = function (grunt) {
             grunt.file.write(configFile, JSON.stringify(configs));
 
             // Print a success message.
-            grunt.log.writeln(':::::' + configFile + ' build successfully:::::');
+            grunt.log.writeln('└──' + chalk.bold.red(configFile) + ' build done!');
         }
     );
 };
