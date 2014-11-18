@@ -1,7 +1,7 @@
 {
   "name": "grunt-static-revision",
   "description": "Create *.json for the static file asset and revisioning through content hashing",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/fxteam/grunt-static-revision",
   "author": {
     "name": "samgui",
@@ -50,5 +50,25 @@
   ],
   "dependencies": {
     "chalk": "^0.5.1"
-  }
+  },
+  "_id": "grunt-static-revision@0.2.1",
+  "_shasum": "877017e93bd16f16ebdd4ad13f3771d1353849ac",
+  "_from": "grunt-static-revision@^0.2.1",
+  "_npmVersion": "1.4.9",
+  "_npmUser": {
+    "name": "samgui",
+    "email": "and1coder@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "samgui",
+      "email": "and1coder@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "877017e93bd16f16ebdd4ad13f3771d1353849ac",
+    "tarball": "http://registry.npmjs.org/grunt-static-revision/-/grunt-static-revision-0.2.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/grunt-static-revision/-/grunt-static-revision-0.2.1.tgz"
 }

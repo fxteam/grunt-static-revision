@@ -138,12 +138,7 @@ module.exports = function (grunt) {
 
                     grunt.file.mkdir(buildDir);
 
-                    if (ext == '.js') {
-                        grunt.file.copy(distFile, buildFile);
-                        grunt.file.delete(distFile);
-                    } else {
-                        grunt.file.copy(srcFile, buildFile);
-                    }
+                    grunt.file.copy(srcFile, buildFile);
 
                     //keep the source file
                     grunt.file.copy(srcFile, distFile);

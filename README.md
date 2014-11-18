@@ -85,9 +85,11 @@ grunt.initConfig({
 ```
 
 ## Release History
+2014-11-18 Only build the changed file
+
 2014-08-11 Incremental updating strategy,add `chalk` module for terminal string styling
 
-2014-07-29 bugfix:build a error key for multilayer directory
+2014-07-29 Bugfix:build a error key for multilayer directory
 
 2014-07-25 Optimizing log format
 
